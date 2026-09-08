@@ -65,7 +65,7 @@ Before making any changes, make sure you have the following.
 ### Kasten dashboard
 
 - The original [Kasten dashboard JSON](https://grafana.com/grafana/dashboards/21065-k10-dashboard/) if you want to make the variable and query changes yourself.
-- Or the [modified dashboard JSON](https://gist.github.com/Jaiganeshjk12/27140f99a214a256ef6a1700cacce17c), ready to import directly.
+- Or the <a href="/resources/grafana-multicluster-dashboard/kasten_multicluster_dashboard.json" target="_blank">modified dashboard JSON</a>, ready to import directly.
 
 {% include note.html content="The original dashboard's queries reference a data source named Prometheus by name, rather than through a picker. If you start from the original and do not have a data source with that exact name, panels show no data until you complete the templating step below. The modified version already uses ${datasource}." %}
 
@@ -85,7 +85,7 @@ To keep this part focused on dashboard customization, we are intentionally not c
 The fast path is to import the modified version of the [officially published Kasten dashboard](https://grafana.com/grafana/dashboards/21065-k10-dashboard/). It retains the same core metrics, adds a few useful panels, and already includes `datasource` and `cluster_name` variables.
 
 1. In Grafana, go to **Dashboards -> New -> Import**.
-2. Paste the [modified dashboard JSON](https://gist.github.com/Jaiganeshjk12/27140f99a214a256ef6a1700cacce17c), or upload it as a file.
+2. Download the <a href="/resources/grafana-multicluster-dashboard/kasten_multicluster_dashboard.json" target="_blank">modified dashboard JSON</a>, then upload it as a file.
 ![Grafana import dashboard](/images/posts/2026-08-27-observability-grafana-multi-cluster-dashboard/grafana-import-dashboard-json.png)
 3. After import, the `datasource` dropdown defaults to the Grafana instance's default Prometheus-type data source. Make sure it is set to the Prometheus-compatible backend that holds your Kasten metrics from Part 1.
 ![Grafana Datasource variable dropdown](/images/posts/2026-08-27-observability-grafana-multi-cluster-dashboard/grafana-datasource-dropdown.png)
